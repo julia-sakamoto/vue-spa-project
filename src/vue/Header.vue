@@ -6,19 +6,19 @@
 export default {
   data () {
     return {
-      msg: 'Hello World!'
+      msg: 'This is the Title'
     }
   }
 }
 </script>
 
 <style lang="sass">
-  @import './assets/sass/main.sass'
+  @import '../assets/sass/main.sass'
 </style>
 
 <style lang="sass" scoped>
   p
-    text-align: center
     font-size: 4.2em
     margin: 0
+    font-weight: bold
 </style>
