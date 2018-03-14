@@ -2,7 +2,7 @@
   <div class="menu">
     <ul>
       <li v-for="(msg, index) of items" :key="msg">
-        {{index += 1}}. {{msg}}
+        <b>{{index += 1}}.</b> {{msg}}
       </li>
     </ul>
 </div>
@@ -12,7 +12,7 @@
 export default {
   data () {
     return {
-      items: ['Menu', 'Menu', 'Menu']
+      items: ['Works', 'About', 'Contact']
     }
   }
 }
@@ -21,12 +21,16 @@ export default {
 <style lang="sass" scoped>
   .menu
     padding: 0 3em
-    line-height: 4.2em
+    border-top: 2px dashed white
+    border-bottom: 2px dashed white
     ul
       display: flex
       flex-wrap: nowrap
       justify-content: space-evenly
       list-style-type: none
       background-color: white
+      align-items: stretch
+      height: 100%
+      line-height: 3em
       li
 </style>
