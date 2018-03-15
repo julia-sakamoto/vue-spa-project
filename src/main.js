@@ -7,6 +7,7 @@ import Top from './vue/Top'
 import Works from './vue/Works'
 import About from './vue/About'
 import Contact from './vue/Contact'
+// import imgL from './vue/Large'
 import router from './router'
 
 Vue.config.productionTip = false
@@ -21,5 +22,6 @@ new Vue({
     'works': Works,
     'about': About,
     'contact': Contact
+    // 'large': imgL
   }
 })

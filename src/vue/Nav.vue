@@ -28,7 +28,7 @@ export default {
       flex-wrap: nowrap
       justify-content: space-evenly
       list-style-type: none
-      background-color: white
+      background-color: rgba(255,255,255, 0.5)
       align-items: stretch
       height: 100%
       line-height: 3em
