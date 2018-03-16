@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import { store } from '../main'
+
 var videos = [
   '<iframe src="https://www.youtube.com/embed/mrNRJOW_sKM" width="280px" height="auto" frameborder="0" encrypted-media" allowfullscreen></iframe>',
   '<iframe src="https://www.youtube.com/embed/o0zSilvqoJg" width="280px" height="auto" frameborder="0" encrypted-media" allowfullscreen></iframe>',
@@ -42,6 +44,12 @@ function selected (index) {
   for (var i = 0; i < imgs.length; i++) {
     if (index === i) {
       document.querySelector('.img' + i).classList.add('selected')
+      store.commit('toggle')
+      console.log(store.state.bool)
+      store.commit('which', {
+        n: i
+      })
+      console.log(store.state.num)
     }
   }
 }

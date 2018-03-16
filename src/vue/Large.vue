@@ -1,11 +1,12 @@
-<!-- <template>
-  <div class="imgL" v-if="which()" >
-    <div class="large" v-html="img[num]" @click="deselect()"/>
+<template>
+  <div class="imgL" v-if="store.state.bool" >
+    <div class="large" v-html="img[store.state.num]" @click="deselect()"/>
   </div>
 </template>
 
 <script>
-var large = false
+import { store } from '../main'
+
 var img = [
   '<img height="100%" src="../../static/game1.JPG" />',
   '<img height="100%" src="../../static/game2.JPG" />',
@@ -13,35 +14,20 @@ var img = [
   '<img height="100%" src="../../static/game4.JPG" />',
   '<img height="100%" src="../../static/game5.JPG" />'
 ]
-var num = 0
 
-function which () {
-  if (document.querySelector('.selected') !== null) {
-    for (var i = 0; i < img.length; i++) {
-      if (document.querySelector('.img' + i).classList.contains('selected')) {
-        num = i
-        large = true
-      }
-    }
-  } else {
-    large = false
-  }
-}
 function deselect () {
-  large = false
+  store.commit('toggle')
 }
 
 export default {
   data () {
     return {
-      large,
-      img,
-      num
+      img
     }
   },
   computed: {
     deselect,
-    which
+    store
   }
 }
 </script>
@@ -54,4 +40,4 @@ export default {
     position: fixed
     .large
       height: 38em
-</style> -->
+</style>
