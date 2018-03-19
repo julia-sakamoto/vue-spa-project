@@ -60,7 +60,8 @@ export default {
       videos,
       imgs,
       classString,
-      selected
+      selected,
+      store
     }
   }
 }

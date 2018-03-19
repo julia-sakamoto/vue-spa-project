@@ -22,22 +22,22 @@ function deselect () {
 export default {
   data () {
     return {
-      img
+      img,
+      store
     }
   },
   computed: {
-    deselect,
-    store
+    deselect
   }
 }
 </script>
 
 <style lang="sass" scoped>
-  .imgL
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
-    position: fixed
-    .large
-      height: 38em
+    .imgL
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      position: fixed
+      .large
+        height: 38em
 </style>
