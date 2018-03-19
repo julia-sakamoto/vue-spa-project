@@ -23,11 +23,9 @@ export default {
   data () {
     return {
       img,
-      store
+      store,
+      deselect
     }
-  },
-  computed: {
-    deselect
   }
 }
 </script>

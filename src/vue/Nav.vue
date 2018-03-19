@@ -20,7 +20,6 @@ export default {
 
 <style lang="sass" scoped>
   .menu
-    padding: 0 3em
     border-top: 2px dashed white
     border-bottom: 2px dashed white
     ul
@@ -32,5 +31,6 @@ export default {
       align-items: stretch
       height: 100%
       line-height: 3em
+      color: black
       li
 </style>

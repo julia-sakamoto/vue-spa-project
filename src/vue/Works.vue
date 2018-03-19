@@ -1,10 +1,12 @@
 <template>
   <div class="works">
     <h2>VIDEOS</h2>
+    <p>{{ desc[0] }}</p>
     <div class="videos">
       <div class="video" v-for="(video) of videos" :key="video" v-html="video"></div>
     </div>
     <h2>GAME IN PROGRESS</h2>
+    <p>{{ desc[1] }}</p>
     <div class="others">
       <div class="video">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/2w-nVivl2Qs" frameborder="0" encrypted-media allowfullscreen></iframe>
@@ -31,6 +33,10 @@ var imgs = [
   '<img width="auto" height="110px" src="../../static/game4.JPG" />',
   '<img width="auto" height="110px" src="../../static/game5.JPG" />'
 ]
+var desc = [
+  'I make music and draw illustrations to go along with the music in my spare time.',
+  'I am currently in the process of developing a 3D game with some friends. The programs I am using include Blender and the Godot Engine.'
+]
 
 function classString (index) {
   for (var i = 0; i < imgs.length; i++) {
@@ -41,17 +47,11 @@ function classString (index) {
   }
 }
 function selected (index) {
-  for (var i = 0; i < imgs.length; i++) {
-    if (index === i) {
-      document.querySelector('.img' + i).classList.add('selected')
-      store.commit('toggle')
-      console.log(store.state.bool)
-      store.commit('which', {
-        n: i
-      })
-      console.log(store.state.num)
-    }
-  }
+  document.querySelector('.img' + index).classList.add('selected')
+  store.commit('toggle')
+  store.commit('which', {
+    n: index
+  })
 }
 
 export default {
@@ -61,7 +61,8 @@ export default {
       imgs,
       classString,
       selected,
-      store
+      store,
+      desc
     }
   }
 }
@@ -69,7 +70,6 @@ export default {
 
 <style lang="sass" scoped>
   .works
-    padding: 0 3em
     h2
       color: white
       text-align: center
