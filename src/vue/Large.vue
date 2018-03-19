@@ -32,10 +32,16 @@ export default {
 
 <style lang="sass" scoped>
     .imgL
-      top: 50%
-      left: 50%
-      transform: translate(-50%, -50%)
       position: fixed
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      background-color: rgba(0,0,0,0.6)
       .large
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        position: fixed
         height: 38em
 </style>

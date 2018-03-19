@@ -3,9 +3,9 @@
     <h2>CONTACT ME</h2>
     <p>{{ desc }}</p>
     <div class="row">
-      <ul>
-        <li v-for="(contact) of contacts" :key="contact" v-html="contact"></li>
-      </ul>
+      <div v-for="(contact, key) of contacts" :key="contact.key" class="link" :class="key">
+        <a :href="contact.link">{{ contact.title }}</a>
+      </div>
     </div>
   </div>
 </template>
@@ -13,11 +13,21 @@
 <script>
 var desc = 'I can be contacted through the following:'
 var contacts = [
-  '<a href="mailto:juliabsakamoto@gmail.com">Personal Email</a>',
-  '<a href="mailto:sakamoju@sheridancollege.ca">School Email</a>',
-  '<a href="tel:905-598-0884">Cellphone Number</a>',
-  '<a href="#">Youtube</a>',
-  '<a href="#">Portfolio Twitter</a>'
+  {
+    key: 0,
+    link: 'mailto:juliabsakamoto@gmail.com',
+    title: 'Personal Email'
+  },
+  {
+    key: 1,
+    link: 'mailto:sakamoju@sheridancollege.ca',
+    title: 'School Email'
+  },
+  {
+    key: 2,
+    link: 'tel:+1(905)598-0884',
+    title: 'Cellphone Number'
+  }
 ]
 
 export default {
@@ -32,14 +42,15 @@ export default {
 
   <style lang="sass" scoped>
     .row
-      ul
-        -webkit-padding-start: 0
-        display: flex
-        flex-wrap: wrap
-        list-style: none
-        justify-content: space-evenly
-        background-color: rgba(255,255,255, 0.5)
-        li
+      -webkit-padding-start: 0
+      display: flex
+      flex-wrap: wrap
+      list-style: none
+      justify-content: space-evenly
+      background-color: rgba(255,255,255, 0.5)
+      div
+        a
           color: black
           padding: 0 1.5em
+          font-style: none
   </style>

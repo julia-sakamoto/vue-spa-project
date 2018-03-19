@@ -29,4 +29,7 @@ export default {
       color: white
       border-color: white
       cursor: pointer
+    &:active
+      background-color: rgba(178,32,0,0.8)
+
 </style>
