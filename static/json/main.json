@@ -1,25 +1,5 @@
 {
-"content":
-  {
-    "skills": [
-      "Vue.js",
-      "Gulp",
-      "Sass/SCSS",
-      "jQuery",
-      "PHP",
-      "Wordpress",
-      "HTML5",
-      "CSS3",
-      "Java",
-      "C#",
-      "Python",
-      "MySQL",
-      "Microsoft SQL Server",
-      "Linux",
-      "Mac",
-      "Web App Development",
-      "Front-End Web Developement"
-    ],
+"content": {
     "contacts": [
       {
         "key": 0,
