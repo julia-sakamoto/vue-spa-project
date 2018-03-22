@@ -19,7 +19,7 @@ export const store = new Vuex.Store({
   state: {
     bool: false,
     num: 0,
-    dogs: null
+    content: null
   },
   mutations: {
     toggle (state) {
@@ -28,12 +28,12 @@ export const store = new Vuex.Store({
     which (state, payload) {
       state.num = payload.n
     },
-    setDogs (state) {
-      SA.get('https://dog.ceo/api/breeds/list/all')
+    setCont (state) {
+      SA.get('../static/json/main.json')
         .end(function (err, res) {
           if (res.ok) {
             console.log(res.body)
-            state.dogs = res.body.message
+            state.content = res.body.content.contacts
           } else {
             console.log(err)
           }
@@ -41,12 +41,12 @@ export const store = new Vuex.Store({
     }
   },
   actions: {
-    setDogs ({ commit }) {
-      commit('setDogs')
+    setCont ({ commit }) {
+      commit('setCont')
     }
   },
   getters: {
-    dogs: state => state.dogs
+    content: state => state.content
   }
 })
 

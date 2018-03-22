@@ -3,12 +3,9 @@
     <h2>CONTACT ME</h2>
     <p>{{ desc }}</p>
     <div class="row">
-      <!-- <div v-for="(contact, key) of contacts" :key="contact.key" class="link" :class="key">
-        <a :href="contact.link">{{ contact.title }}</a> -->
-      <div v-for="(num) of dogs.hound.length" :key="num">
-        <div>{{ dogs.hound[num-1] }}</div>
+      <div v-for="(contact, key) of contacts" :key="contact.key" class="link" :class="key">
+        <a :href="contact.link">{{ contact.title }}</a>
       </div>
-      <!-- </div> -->
     </div>
   </div>
 </template>
@@ -24,12 +21,12 @@ export default {
     }
   },
   computed: {
-    dogs () {
-      return store.getters.dogs
+    contacts () {
+      return store.getters.content
     }
   },
   beforeCreate () {
-    store.dispatch('setDogs')
+    store.dispatch('setCont')
   }
 }
 </script>
