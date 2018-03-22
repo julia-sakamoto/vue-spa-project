@@ -32,6 +32,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.contacts
+  padding-bottom: 3em
   .row
     -webkit-padding-start: 0
     display: flex

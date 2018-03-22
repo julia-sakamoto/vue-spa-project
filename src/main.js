@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import Vuex from 'vuex'
+import ScrollTo from 'vue-scrollto'
 import Ttl from './vue/Header'
 import NavBar from './vue/Nav'
 import Top from './vue/Top'
@@ -9,10 +10,10 @@ import Works from './vue/Works'
 import About from './vue/About'
 import Contact from './vue/Contact'
 import imgL from './vue/Large'
-import router from './router'
 import { boolMod, numMod, contMod } from './store'
 
 Vue.use(Vuex)
+Vue.use(ScrollTo)
 Vue.config.productionTip = false
 
 export const store = new Vuex.Store({
@@ -26,7 +27,6 @@ export const store = new Vuex.Store({
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
   store,
   components: {
     'ttl': Ttl,

@@ -1,8 +1,9 @@
 <template>
-  <button type="button">Return to Top</button>
+  <button type="button" v-scroll-to="'#app'">Return to Top</button>
 </template>
 
 <script>
+
 export default {
   data () {
     return {
