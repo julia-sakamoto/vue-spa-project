@@ -9,7 +9,7 @@
     </div>
     <h2>GAME IN PROGRESS</h2>
     <p>{{ desc[1] }}</p>
-    <div class="others">
+    <div class="game">
       <div class="video">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/2w-nVivl2Qs" frameborder="0" encrypted-media allowfullscreen></iframe>
       </div>
@@ -18,6 +18,11 @@
           <img width="auto" height="110px" :src="img" />
         </div>
       </div>
+    </div>
+    <h2>PORTFOLIO WEBSITE REPOSITORY</h2>
+    <p>The Github repo for this website!!</p>
+    <div class="repo">
+      <a href="https://github.com/julia-sakamoto/vue-spa-project">Github</a>
     </div>
   </div>
 </template>
@@ -58,6 +63,8 @@ export default {
 
 <style lang="sass" scoped>
   .works
+    padding-bottom: 3em
+    border-bottom: 2px dashed white
     h2
       color: white
       text-align: center
@@ -69,7 +76,7 @@ export default {
     align-items: center
     background-color: rgba(255,255,255, 0.5)
     padding-bottom: 3em
-  .others
+  .game
     padding-top: 3em
     align-items: center
     background-color: rgba(255,255,255, 0.5)
@@ -83,4 +90,12 @@ export default {
       flex-direction: row
       justify-content: space-evenly
       padding-bottom: 3em
+  .repo
+    background-color: rgba(255,255,255, 0.5)
+    padding: 1.5em
+    a
+      color: black
+      text-decoration: none
+      &:hover
+        color: red
 </style>

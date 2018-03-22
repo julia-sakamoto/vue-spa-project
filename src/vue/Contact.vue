@@ -30,17 +30,20 @@ export default {
   }
 }
 </script>
-  <style lang="sass" scoped>
-    .row
-      -webkit-padding-start: 0
-      display: flex
-      flex-wrap: wrap
-      list-style: none
-      justify-content: space-evenly
-      background-color: rgba(255,255,255, 0.5)
-      div
-        a
-          color: black
-          padding: 0 1.5em
-          font-style: none
+
+<style lang="sass" scoped>
+  .row
+    -webkit-padding-start: 0
+    display: flex
+    flex-wrap: wrap
+    list-style: none
+    justify-content: space-evenly
+    background-color: rgba(255,255,255, 0.5)
+    div
+      padding: 1.5em
+      a
+        color: black
+        text-decoration: none
+        &:hover
+          color: red
   </style>
