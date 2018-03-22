@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     contacts () {
-      return store.getters.content
+      return store.getters.contacts
     }
   },
   beforeCreate () {

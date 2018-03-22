@@ -3,7 +3,9 @@
     <h2>VIDEOS</h2>
     <p>{{ desc[0] }}</p>
     <div class="videos">
-      <div class="video" v-for="(video) of videos" :key="video" v-html="video"></div>
+      <div class="video" v-for="(video) of videos" :key="video">
+      <iframe width="280px" height="auto" :src="video" frameborder="0" encrypted-media allowfullscreen></iframe>
+      </div>
     </div>
     <h2>GAME IN PROGRESS</h2>
     <p>{{ desc[1] }}</p>
@@ -12,7 +14,9 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/2w-nVivl2Qs" frameborder="0" encrypted-media allowfullscreen></iframe>
       </div>
       <div class="imgs">
-        <div @click="selected(index)" v-for="(img, index) of imgs" :key="img" :class="classString(index)" v-html="img"></div>
+        <div @click="selected(index)" v-for="(img, index) of imgs" :key="img" :class="'img' + index">
+          <img width="auto" height="110px" :src="img" />
+        </div>
       </div>
     </div>
   </div>
@@ -21,31 +25,11 @@
 <script>
 import { store } from '../main'
 
-var videos = [
-  '<iframe src="https://www.youtube.com/embed/mrNRJOW_sKM" width="280px" height="auto" frameborder="0" encrypted-media" allowfullscreen></iframe>',
-  '<iframe src="https://www.youtube.com/embed/o0zSilvqoJg" width="280px" height="auto" frameborder="0" encrypted-media" allowfullscreen></iframe>',
-  '<iframe src="https://www.youtube.com/embed/6qcmAaf2s90" width="280px" height="auto" frameborder="0" encrypted-media" allowfullscreen></iframe>'
-]
-var imgs = [
-  '<img width="auto" height="110px" src="../../static/game1.JPG" />',
-  '<img width="auto" height="110px" src="../../static/game2.JPG" />',
-  '<img width="auto" height="110px" src="../../static/game3.JPG" />',
-  '<img width="auto" height="110px" src="../../static/game4.JPG" />',
-  '<img width="auto" height="110px" src="../../static/game5.JPG" />'
-]
 var desc = [
   'I make music and draw illustrations to go along with the music in my spare time.',
   'I am currently in the process of developing a 3D game with some friends. The programs I am using include Blender and the Godot Engine.'
 ]
 
-function classString (index) {
-  for (var i = 0; i < imgs.length; i++) {
-    if (index === i) {
-      var str = 'img' + i
-      return str
-    }
-  }
-}
 function selected (index) {
   document.querySelector('.img' + index).classList.add('selected')
   store.commit('toggle')
@@ -57,12 +41,16 @@ function selected (index) {
 export default {
   data () {
     return {
-      videos,
-      imgs,
-      classString,
       selected,
-      store,
       desc
+    }
+  },
+  computed: {
+    imgs () {
+      return store.getters.imgs
+    },
+    videos () {
+      return store.getters.videos
     }
   }
 }

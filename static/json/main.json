@@ -1,21 +1,50 @@
 {
-"content": {
-    "contacts": [
-      {
-        "key": 0,
-        "link": "mailto:juliabsakamoto@gmail.com",
-        "title": "Personal Email"
-      },
-      {
-        "key": 1,
-        "link": "mailto:sakamoju@sheridancollege.ca",
-        "title": "School Email"
-      },
-      {
-        "key": 2,
-        "link": "tel:+1(905)598-0884",
-        "title": "Cellphone Number"
-      }
-    ]
-  }
+  "contacts": [
+    {
+      "key": 0,
+      "link": "mailto:juliabsakamoto@gmail.com",
+      "title": "Personal Email"
+    },
+    {
+      "key": 1,
+      "link": "mailto:sakamoju@sheridancollege.ca",
+      "title": "School Email"
+    },
+    {
+      "key": 2,
+      "link": "tel:+1(905)598-0884",
+      "title": "Cellphone Number"
+    }
+  ],
+  "skills": [
+    "Vue.js",
+    "Gulp",
+    "Sass/SCSS",
+    "jQuery",
+    "PHP",
+    "Wordpress",
+    "HTML5",
+    "CSS3",
+    "Java",
+    "C#",
+    "Python",
+    "MySQL",
+    "Microsoft SQL Server",
+    "Linux",
+    "Mac",
+    "Web App Development",
+    "Front-End Web Developement"
+  ],
+  "imgs": [
+    "../../static/game1.JPG",
+    "../../static/game2.JPG",
+    "../../static/game3.JPG",
+    "../../static/game4.JPG",
+    "../../static/game5.JPG"
+  ],
+  "videos": [
+    "https://www.youtube.com/embed/mrNRJOW_sKM",
+    "https://www.youtube.com/embed/o0zSilvqoJg",
+    "https://www.youtube.com/embed/6qcmAaf2s90"
+  ]
 }

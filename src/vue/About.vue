@@ -10,32 +10,18 @@
 </template>
 
 <script>
-var skills = [
-  'Vue.js',
-  'Gulp',
-  'Sass/SCSS',
-  'jQuery',
-  'PHP',
-  'Wordpress',
-  'HTML5',
-  'CSS3',
-  'Java',
-  'C#',
-  'Python',
-  'MySQL',
-  'Microsoft SQL Server',
-  'Linux',
-  'Mac',
-  'Web App Development',
-  'Front-End Web Developement'
-]
+import { store } from '../main'
 var desc = 'A Computer Systems Analyst Student currently studying at Sheridan College. Main skills include Javascript framework Vue.js (This website was made with Vue!), Gulp, Sass/SCSS, jQuery, PHP, and HTML5/CSS3. The full list of skills are listed below!'
 
 export default {
   data () {
     return {
-      desc,
-      skills
+      desc
+    }
+  },
+  computed: {
+    skills () {
+      return store.getters.skills
     }
   }
 }
