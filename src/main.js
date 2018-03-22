@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import Vuex from 'vuex'
+import SA from 'superagent'
 import Ttl from './vue/Header'
 import NavBar from './vue/Nav'
 import Top from './vue/Top'
@@ -17,7 +18,8 @@ Vue.config.productionTip = false
 export const store = new Vuex.Store({
   state: {
     bool: false,
-    num: 0
+    num: 0,
+    dogs: null
   },
   mutations: {
     toggle (state) {
@@ -25,7 +27,26 @@ export const store = new Vuex.Store({
     },
     which (state, payload) {
       state.num = payload.n
+    },
+    setDogs (state) {
+      SA.get('https://dog.ceo/api/breeds/list/all')
+        .end(function (err, res) {
+          if (res.ok) {
+            console.log(res.body)
+            state.dogs = res.body.message
+          } else {
+            console.log(err)
+          }
+        })
     }
+  },
+  actions: {
+    setDogs ({ commit }) {
+      commit('setDogs')
+    }
+  },
+  getters: {
+    dogs: state => state.dogs
   }
 })
 

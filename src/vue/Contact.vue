@@ -3,43 +3,36 @@
     <h2>CONTACT ME</h2>
     <p>{{ desc }}</p>
     <div class="row">
-      <div v-for="(contact, key) of contacts" :key="contact.key" class="link" :class="key">
-        <a :href="contact.link">{{ contact.title }}</a>
+      <!-- <div v-for="(contact, key) of contacts" :key="contact.key" class="link" :class="key">
+        <a :href="contact.link">{{ contact.title }}</a> -->
+      <div v-for="(num) of dogs.hound.length" :key="num">
+        <div>{{ dogs.hound[num-1] }}</div>
       </div>
+      <!-- </div> -->
     </div>
   </div>
 </template>
 
 <script>
+import { store } from '../main'
 var desc = 'I can be contacted through the following:'
-var contacts = [
-  {
-    key: 0,
-    link: 'mailto:juliabsakamoto@gmail.com',
-    title: 'Personal Email'
-  },
-  {
-    key: 1,
-    link: 'mailto:sakamoju@sheridancollege.ca',
-    title: 'School Email'
-  },
-  {
-    key: 2,
-    link: 'tel:+1(905)598-0884',
-    title: 'Cellphone Number'
-  }
-]
 
 export default {
   data () {
     return {
-      desc,
-      contacts
+      desc
     }
+  },
+  computed: {
+    dogs () {
+      return store.getters.dogs
+    }
+  },
+  beforeCreate () {
+    store.dispatch('setDogs')
   }
 }
 </script>
-
   <style lang="sass" scoped>
     .row
       -webkit-padding-start: 0
