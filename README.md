@@ -1,4 +1,5 @@
-# vue-spa-project
+vue-spa-project
+====
 
 > First Vue.js project
 
