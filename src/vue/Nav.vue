@@ -1,7 +1,7 @@
 <template>
   <div class="menu">
     <ul>
-      <li v-for="(item, index) of items" :key="item">
+      <li v-for="(item, index) of items" :key="index">
         <a v-scroll-to="item.scroll"><b>{{index += 1}}.</b> {{item.msg}}</a>
       </li>
     </ul>
@@ -43,7 +43,7 @@ export default {
       background-color: rgba(255,255,255, 0.5)
       align-items: stretch
       height: 100%
-      line-height: 3em
+      padding: 1em
       color: black
       li
         a
