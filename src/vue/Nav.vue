@@ -1,8 +1,8 @@
 <template>
   <div class="menu">
     <ul>
-      <li v-for="(msg, index) of items" :key="msg">
-        <b>{{index += 1}}.</b> {{msg}}
+      <li v-for="(item, index) of items" :key="item">
+        <a v-scroll-to="item.scroll"><b>{{index += 1}}.</b> {{item.msg}}</a>
       </li>
     </ul>
 </div>
@@ -12,7 +12,20 @@
 export default {
   data () {
     return {
-      items: ['Works', 'About', 'Contact']
+      items: [
+        {
+          msg: 'Works',
+          scroll: '.works'
+        },
+        {
+          msg: 'About',
+          scroll: '.about'
+        },
+        {
+          msg: 'Contact',
+          scroll: '.contacts'
+        }
+      ]
     }
   }
 }
@@ -33,4 +46,8 @@ export default {
       line-height: 3em
       color: black
       li
+        a
+          &:hover
+            cursor: pointer
+            color: red
 </style>

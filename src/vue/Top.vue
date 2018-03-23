@@ -1,5 +1,5 @@
 <template>
-  <button type="button" v-scroll-to="'#app'">Return to Top</button>
+  <button type="button" v-scroll-to="'.header'">Return to Top</button>
 </template>
 
 <script>
